@@ -1,4 +1,6 @@
-export const localStorage = (key, initialValue) => {
+import React,{useState} from 'react'
+
+export const useLocalStorage = (key, initialValue) => {
  // To retrieve an item from localStorage, call localStorage.getItem('itemName')
 // If that item doesn't exist, it will return undefined
 const [storedValue, setStoredValue] = useState(() => {
@@ -13,6 +15,7 @@ const [storedValue, setStoredValue] = useState(() => {
     // Save to local storage
     window.localStorage.setItem(key, JSON.stringify(value));
   };
-    return [storedValue, setValue];
+    return [storedValue,setValue];
 
 }
+
